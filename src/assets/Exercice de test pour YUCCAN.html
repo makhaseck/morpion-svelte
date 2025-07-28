@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <script type="module" src="Exercice%20de%20test%20pour%20YUCCAN_files/client.es"></script>
+
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="http://localhost:5173/vite.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice de test pour YUCCAN</title>
+  <style type="text/css" data-vite-dev-id="/home/makha/Documents/YUCCAN/morpion_yuccan-svelte/src/app.css">:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #000000, #6a0dad); /* noir -> mauve */
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+.card {
+  padding: 2em;
+}
+
+#app {
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+</style><style type="text/css" data-vite-dev-id="/home/makha/Documents/YUCCAN/morpion_yuccan-svelte/src/App.svelte?svelte&amp;type=style&amp;lang.css">
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #000000, #6a0dad);
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  main.s-XsEmFtvddWTw {
+    text-align: center;
+    padding: 2rem;
+    max-width: 600px;
+    width: 100%;
+  }
+
+  .logo.s-XsEmFtvddWTw {
+    width: 120px;
+    margin-bottom: 1rem;
+  }
+
+  h1.s-XsEmFtvddWTw {
+    margin-top: 0;
+  }
+
+  .grille.s-XsEmFtvddWTw {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    gap: 10px;
+    margin: 1rem auto;
+    justify-content: center;
+  }
+
+  .case.s-XsEmFtvddWTw {
+    width: 100px;
+    height: 100px;
+    font-size: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+    user-select: none;
+  }
+
+  .case.s-XsEmFtvddWTw:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  .gagnante.s-XsEmFtvddWTw {
+    animation: s-XsEmFtvddWTw-clignoter 0.8s ease-in-out infinite alternate;
+    background-color: #b3ffb3 !important;
+  }
+
+  @keyframes s-XsEmFtvddWTw-clignoter {
+    from {
+      background-color: #b3ffb3;
+    }
+    to {
+      background-color: #66ff66;
+    }
+  }
+
+  .score.s-XsEmFtvddWTw {
+    margin: 1rem 0;
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+
+  .boutons.s-XsEmFtvddWTw button:where(.s-XsEmFtvddWTw) {
+    margin: 0.5rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    background: white;
+    color: black;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+  }
+
+  .boutons.s-XsEmFtvddWTw button:where(.s-XsEmFtvddWTw):hover {
+    background: #eaeaea;
+  }
+ .s-XsEmFtvddWTw{}</style></head>
+  <body>
+    <div id="app"><main class="s-XsEmFtvddWTw"><img alt="Logo" class="logo s-XsEmFtvddWTw" src="Exercice%20de%20test%20pour%20YUCCAN_files/logo.png"> <h1 class="s-XsEmFtvddWTw">Jeu de Morpion</h1> <p class="s-XsEmFtvddWTw">Joueur X à toi !</p> <div class="grille s-XsEmFtvddWTw"><div class="case  s-XsEmFtvddWTw"></div><div class="case  s-XsEmFtvddWTw"></div><div class="case  s-XsEmFtvddWTw"></div><div class="case  s-XsEmFtvddWTw"></div><div class="case  s-XsEmFtvddWTw"></div><div class="case  s-XsEmFtvddWTw"></div><div class="case  s-XsEmFtvddWTw"></div><div class="case  s-XsEmFtvddWTw"></div><div class="case  s-XsEmFtvddWTw"></div></div> <p class="score s-XsEmFtvddWTw">Score — X : 0 | O : 0</p> <p class="score s-XsEmFtvddWTw">Parties jouées : 0</p> <div class="boutons s-XsEmFtvddWTw"><button class="s-XsEmFtvddWTw">Rejouer</button> <button class="s-XsEmFtvddWTw">Réinitialiser le score</button></div><!----></main></div>
+    <script type="module" src="Exercice%20de%20test%20pour%20YUCCAN_files/main.js"></script>
+  
+
+</body></html>
