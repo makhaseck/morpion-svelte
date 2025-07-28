@@ -1,47 +1,65 @@
-# Svelte + Vite
+Morpion Svelte – Jeu Tic-Tac-Toe évolutif
 
-This template should help get you started developing with Svelte in Vite.
+Ce projet est une réalisation en **Svelte** d’un jeu de morpion (Tic-Tac-Toe) 100% dynamique.  
+Il répond d’abord à un cahier des charges précis, puis a été enrichi par mes soins pour rendre la logique de jeu **adaptative** à la taille de la grille.
 
-## Recommended IDE Setup
+---
 
-[VS Code](https://code.visualstudio.com/) + [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode).
+## 📋 Cahier des charges initial
 
-## Need an official Svelte framework?
+✅ **Gameplay classique :**
 
-Check out [SvelteKit](https://github.com/sveltejs/kit#readme), which is also powered by Vite. Deploy anywhere with its serverless-first approach and adapt to various platforms, with out of the box support for TypeScript, SCSS, and Less, and easily-added support for mdsvex, GraphQL, PostCSS, Tailwind CSS, and more.
+- Grille 3x3
+- Deux joueurs en local
+- Alternance des tours
+- Détection de victoire ou d’égalité
+- Comptage des scores
+- Bouton “Rejouer”
 
-## Technical considerations
+✅ **Contraintes à respecter :**
 
-**Why use this over SvelteKit?**
+- Empêcher de jouer sur une case déjà remplie
+- Afficher qui doit jouer
+- Afficher le gagnant ou le message d’égalité
 
-- It brings its own routing solution which might not be preferable for some users.
-- It is first and foremost a framework that just happens to use Vite under the hood, not a Vite app.
+---
 
-This template contains as little as possible to get started with Vite + Svelte, while taking into account the developer experience with regards to HMR and intellisense. It demonstrates capabilities on par with the other `create-vite` templates and is a good starting point for beginners dipping their toes into a Vite + Svelte project.
+## 🚀 Améliorations apportées (version dynamique)
 
-Should you later need the extended capabilities and extensibility provided by SvelteKit, the template has been structured similarly to SvelteKit so that it is easy to migrate.
+🎯 **Grille dynamique** :  
+Le jeu peut maintenant s’adapter à n’importe quelle taille de grille (3x3, 4x4, 5x5…), et détecte automatiquement la logique de victoire selon la taille.
 
-**Why `global.d.ts` instead of `compilerOptions.types` inside `jsconfig.json` or `tsconfig.json`?**
+🧠 **Détection automatique** :  
+La logique de victoire s’adapte à la grille : alignement requis selon les dimensions choisies.
 
-Setting `compilerOptions.types` shuts out all other types not explicitly listed in the configuration. Using triple-slash references keeps the default TypeScript setting of accepting type information from the entire workspace, while also adding `svelte` and `vite/client` type information.
+⚙️ **Réactivité Svelte** :  
+L’ensemble des états (joueur actuel, score, message, grille) est géré de façon réactive grâce au système de réactivité de Svelte.
 
-**Why include `.vscode/extensions.json`?**
+---
 
-Other templates indirectly recommend extensions via the README, but this file allows VS Code to prompt the user to install the recommended extension upon opening the project.
+## 🔧 Technologies utilisées
 
-**Why enable `checkJs` in the JS template?**
+- [Svelte](https://svelte.dev/) – Framework JS moderne
+- HTML5 / CSS3
+- JavaScript natif
 
-It is likely that most cases of changing variable types in runtime are likely to be accidental, rather than deliberate. This provides advanced typechecking out of the box. Should you like to take advantage of the dynamically-typed nature of JavaScript, it is trivial to change the configuration.
+---
 
-**Why is HMR not preserving my local component state?**
+## ▶️ Lancer le projet en local
 
-HMR state preservation comes with a number of gotchas! It has been disabled by default in both `svelte-hmr` and `@sveltejs/vite-plugin-svelte` due to its often surprising behavior. You can read the details [here](https://github.com/sveltejs/svelte-hmr/tree/master/packages/svelte-hmr#preservation-of-local-state).
+### 📦 Installation
 
-If you have state that's important to retain within a component, consider creating an external store which would not be replaced by HMR.
+```bash
+git clone https://github.com/makhaseck/morpion-svelte.git
+cd morpion-svelte
+npm install
+npm run dev
 
-```js
-// store.js
-// An extremely simple external store
-import { writable } from 'svelte/store'
-export default writable(0)
-```
+Puis ouvre ton navigateur à l’adresse :
+👉 http://localhost:5173
+<img width="812" height="730" alt="image" src="https://github.com/user-attachments/assets/365aa142-8e0b-48d8-9cec-ba3b0013a87f" />
+
+
+ Auteur
+
+Makha SECK
